@@ -1,0 +1,24 @@
+Pata ejecutar deberemos realizar el comando de npm start, configurado anteriormente en package.json
+
+--------ADMIN--------
+user:admin
+surname:admin
+email:admin@admin.com
+password:admin
+----------------------
+-------CLIENTS--------
+user:Take
+surname:Kubo
+email: take@kubo.com
+password:admin
+----------------------
+
+Al crear un nuevo modulo
+1- Dirigirse a controlers y crear el nuevo controlador importando lo común a todo.
+2- Dirigirse a routes y crear la ruta para nuestro nuevo modulo.
+3- Crear una carpeta en uploads para guardar las imagenes de este modulo(si las tuviese).
+4- Ir a app.js y cargar la ruta de nuestro nuevo modulo
+
+Para iniciar la base de datos deberemos usar npm start
+Al estar el backend en la api entonces deberemos hacer npm start en la carpeta api
+
