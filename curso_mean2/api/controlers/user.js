@@ -159,16 +159,15 @@ function updateUser(req,res){
 function uploadImage(req,res){
     var userId = req.params.id;
     var file_name = 'Imagen no subida';
-
+    console.log("SDKADMSA: ",req.files);
     if (req.files){
-        var file_path = req.files.image.path;
+        var file_path = req.files.file.path;
         var file_split = file_path.split('/'); //Recorto el path
         var file_name = file_split[2]; //Corresponde al archivo que vamos a subir
-        
-        //Conseguir el tipo de archivo que estamos subiendo
+        // //Conseguir el tipo de archivo que estamos subiendo
         var ext_split = file_name.split('.');
         var file_ext = ext_split[1];
-
+        console.log("EXTENSION: ",file_ext);
         if (file_ext == 'png' || file_ext == 'jpg' || file_ext == 'gif'){
             User.findByIdAndUpdate(userId,{image: file_name}, (err,userUpdated) =>{
                 if (err){
@@ -182,7 +181,7 @@ function uploadImage(req,res){
                             message: 'No se ha podido actualizar la imagen del usuario'
                         });
                     } else{
-                        res.status(200).send({user:userUpdated}); // Devuelve la imagen del usuario actualizada
+                        res.status(200).send({image:file_name,user:userUpdated}); // Devuelve la imagen del usuario actualizada
                     }
                 }
             }); // 

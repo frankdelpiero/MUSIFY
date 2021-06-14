@@ -21,6 +21,13 @@
             <input type="text" #email="ngModel" name="email" [(ngModel)] = "user.email" class="form-control" required/>
             <span *ngIf="!email.valid && email.touched"> <u>El campo email debe ser rellenado</u></span>
         </p>
+        <p>
+          <label>Insertar imagen</label>
+          <input type='file' placeholder='Inserta tu imagen' (change)="fileChangeEvent($event)" />
+        </p>
+        <div class='image_for_edit' *ngIf= "user.image && user.image != 'null'"  >
+          <img src="{{urlAll+'get-image-user/'+user.image}}" style="width : 50px;"/>
+        </div>
         <input type="submit" value = "Actualizar los datos" class="btn btn-primary"/>
     </form>
   </div>

@@ -1,3 +1,55 @@
-body{
+html,body{
+    margin: 0px;
+    height: 100%;
     background: grey;
+}
+.head-title{
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    display: block;
+}
+
+.navigation{
+    text-align: center;
+    color: white;
+    background: #1c1c1f;
+    height: 100%;
+}
+.navigation a {
+    color: #ddd;
+    margin-block: 20px;
+    margin-bottom: 20px;
+    display: block;
+    text-decoration: none;
+}
+
+.navigation a:hover {
+    color:white;
+    margin-block: 20px;
+    margin-bottom: 20px;
+    display: block;
+    text-decoration: none;
+}
+
+.navigation .glyphicon {
+    font-size: 25px;
+    display: block;
+    width: 100%;
+}
+#user-logged{
+    text-decoration: center;
+    background: #1c1c1f;
+    position: absolute;
+    bottom: 0px;
+    border-top: 1px solid #444;
+    width: 75%;
+}
+
+
+
+
+.btn-logout{
+    cursor: pointer;
 }

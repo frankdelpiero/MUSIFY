@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Console } from 'console';
 import { User } from './models/user';
 import {UserService} from './services/user.service';
+import { GLOBAL } from './services/global';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -15,6 +16,7 @@ export class AppComponent implements OnInit {
   public token; //Propiedad a guardar en el localstorage
   public errorMessage;
   public alertRegister;
+  public url;
   constructor(    private _userService:UserService){
     // Inicio un usuario con los parametros vacios excepto el rol
     this.user = new User('','','','','','ROLE_USER','');
@@ -27,7 +29,7 @@ export class AppComponent implements OnInit {
     //Inicio las sesiones
     this.identity = this._userService.getIdentity();
     this.token =    this._userService.getToken();
-
+    this.url = GLOBAL.url;
     console.log("IDENTIDAD SESION: "+this.identity);
     console.log("TOKEN SESION: "+this.token);
   }
