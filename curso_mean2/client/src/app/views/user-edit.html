@@ -1,0 +1,26 @@
+  <div class="col-lg-6">
+  <h1>{{titulo}}</h1>
+    <div *ngIf="alertUpdate" >
+    <div class="alert alert-info">
+      {{alertUpdate}}
+    </div>
+  </div>
+   <form class = "col-md-7" #userUpdateForm = "ngForm" (ngSubmit)="onSubmit()" >
+        <p>
+            <label>Nombre:</label>
+            <input type="text" #name="ngModel" name="name" [(ngModel)]= "user.name"  class="form-control" required/>
+            <span *ngIf="!name.valid && name.touched"> <u>El campo nombre debe ser rellenado</u></span>
+        </p>
+        <p>
+            <label>Apellidos:</label>
+            <input type="text" #surname="ngModel" name="surname" [(ngModel)]="user.surname"  class="form-control" required/>
+            <span *ngIf="!surname.valid && surname.touched"> <u>El campo apellido debe ser rellenado</u></span>
+        </p>
+        <p>
+            <label>Correo electrónico:</label>
+            <input type="text" #email="ngModel" name="email" [(ngModel)] = "user.email" class="form-control" required/>
+            <span *ngIf="!email.valid && email.touched"> <u>El campo email debe ser rellenado</u></span>
+        </p>
+        <input type="submit" value = "Actualizar los datos" class="btn btn-primary"/>
+    </form>
+  </div>
