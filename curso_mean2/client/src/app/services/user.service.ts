@@ -55,11 +55,11 @@ export class UserService{
     }
 
     // Actualizo a un usuario pasandole la url y el id de este mismo
-    update_user(user_to_update){
+    updateUser(user_to_update){
         let json = JSON.stringify(user_to_update);
         let params = json;
         let headers = new Headers({'Content-Type':'application/json','Authorization':this.getToken()});
-        console.log(params);
-        return this._http.post(this.url+'update-user/'+user_to_update._id,params,{headers:headers}).map(res => res.json());
+        console.log("PRUEBA: ",params);
+        return this._http.put(this.url+'update-user/'+user_to_update._id,params,{headers:headers}).map(res => res.json());
     }
 }
